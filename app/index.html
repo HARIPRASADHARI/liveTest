@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  
-  <!--build:css css/styles.min.css-->
-  <link rel="stylesheet" href="css/angular-material.css">
-  <link rel="stylesheet" href="css/print.css">
-  <!--endbuild-->
-</head>
-
-<body ng-app="myApp" ng-cloak>
-  <md-button class="md-raised md-primary">Hai</md-button>
-  <md-button class="md-raised md-primary">Hai</md-button>
-  <md-button class="md-raised md-primary">Hai</md-button>
-  <md-button class="md-raised md-primary">Hai</md-button>
-  
-  
-  <!--build:js js/main.min.js -->
-  <script type="text/javascript" src="js/lib/angular.js"></script>
-  <script type="text/javascript" src="js/lib/angular-animate.js"></script>
-  <script type="text/javascript" src="js/lib/angular-aria.js"></script>
-  <script type="text/javascript" src="js/lib/angular-material.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
-  <!-- endbuild -->
-</body>
-
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular | HTML-5 Chat</title>
+    
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/angular-material.css">
+    <link rel="stylesheet" href="css/print.css">
+    <!--endbuild-->
+  </head>
+  <body ng-app="myApp" ng-cloak>
+    <div layout="column" layout-align="center center" layout-fill>
+      <div layout="column">
+        <md-content layout="row">
+        <md-card layout-padding flex="100" >
+        <form name="loginForm">
+          <div layout="row" layout-align="center center">
+            <h2 class="md-display">Login</h2>
+          </div>
+          
+          <md-input-container class="md-block">
+          <label>User Name</label>
+          <input >
+          </md-input-container>
+          
+          <md-input-container class="md-block">
+          <label>Email Id</label>
+          <input  type="email">
+          </md-input-container>
+          <a href="#"><span class="md-subhead">forgot password ?</span></a>
+          <div layout="row" layout-align="center center">
+            <md-button class="md-raised md-primary">
+            Submit
+            </md-button>
+          </div>
+        </form>
+        </md-card>
+        </md-content>
+      </div>
+    </div>
+    
+    
+    <!--build:js js/main.min.js -->
+    <script type="text/javascript" src="js/lib/angular.js"></script>
+    <script type="text/javascript" src="js/lib/angular-animate.js"></script>
+    <script type="text/javascript" src="js/lib/angular-aria.js"></script>
+    <script type="text/javascript" src="js/lib/angular-material.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <!-- endbuild -->
+  </body>
 </html>
