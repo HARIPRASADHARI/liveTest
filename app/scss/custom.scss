@@ -1,1 +1,20 @@
 /*custom.scss*/
+$background-color:#123;
+body{
+	background-color: transparent;
+}
+#login{
+	a,span{
+		text-decoration: none;
+		outline: 0;
+		&:hover{
+			cursor: pointer;
+		}
+		&:focus{
+			outline:0 !important;
+		}
+		&:active{
+			outline:0 !important;
+		}
+	}
+}

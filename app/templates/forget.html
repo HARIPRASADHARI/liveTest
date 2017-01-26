@@ -1,0 +1,52 @@
+<md-dialog aria-label="Mango (Fruit)" flex="50">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Sign Up Form</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                
+                    <md-input-container class="md-block">
+                        <label>First Name</label>
+                        <input>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Last Name</label>
+                        <input>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Email Id</label>
+                        <input>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Mobile Number</label>
+                        <input>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>State</label>
+                        <input>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>City</label>
+                        <input>
+                    </md-input-container>
+                
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row" layout-align="end center">
+            <md-button class="md-warn md-raised" ng-click="answer('not useful')">
+                reset
+            </md-button>
+            <md-button class="md-primary md-raised"  md-autofocus>
+                submit
+            </md-button>
+            
+        </md-dialog-actions>
+    </form>
+</md-dialog>

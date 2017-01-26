@@ -1,4 +1,20 @@
-angular.module('myApp',['ngMaterial']);
-console.log("hai");
-console.log("hai");
-console.log("hai");console.log("hai");console.log("hai");console.log("hai");console.log("hai");
+var app =angular.module('myApp',['ngMaterial'])
+app.controller('formController',function($scope,$mdDialog){
+	$scope.forget=function(ev){
+		$mdDialog.show({
+			controller:DialogController,
+			templateUrl:'/templates/forget.html',
+			parent:angular.element(document.body),
+			targetEvent:ev,
+			clickOutsideToClose:true
+		});
+	}
+	function DialogController($scope,$mdDialog){
+	$scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+}
+	
+
+});

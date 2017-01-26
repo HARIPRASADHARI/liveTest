@@ -7,47 +7,69 @@
     
     <!--build:css css/styles.min.css-->
     <link rel="stylesheet" href="css/angular-material.css">
-    <link rel="stylesheet" href="css/print.css">
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/custom.css">
     <!--endbuild-->
-  </head>
-  <body ng-app="myApp" ng-cloak>
-    <div layout="column" layout-align="center center" layout-fill>
-      <div layout="column">
-        <md-content layout="row">
-        <md-card layout-padding flex="100" >
-        <form name="loginForm">
-          <div layout="row" layout-align="center center">
-            <h2 class="md-display">Login</h2>
-          </div>
-          
-          <md-input-container class="md-block">
-          <label>User Name</label>
-          <input >
-          </md-input-container>
-          
-          <md-input-container class="md-block">
-          <label>Email Id</label>
-          <input  type="email">
-          </md-input-container>
-          <a href="#"><span class="md-subhead">forgot password ?</span></a>
-          <div layout="row" layout-align="center center">
-            <md-button class="md-raised md-primary">
-            Submit
-            </md-button>
-          </div>
-        </form>
-        </md-card>
-        </md-content>
-      </div>
-    </div>
-    
-    
     <!--build:js js/main.min.js -->
     <script type="text/javascript" src="js/lib/angular.js"></script>
     <script type="text/javascript" src="js/lib/angular-animate.js"></script>
     <script type="text/javascript" src="js/lib/angular-aria.js"></script>
     <script type="text/javascript" src="js/lib/angular-material.js"></script>
+    <script type="text/javascript" src="js/controls/controller.js"></script>
+    <script type="text/javascript" src="js/service/service.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <!-- endbuild -->
+  </head>
+  <body ng-app="myApp" ng-cloak  >  
+    <!-- <md-toolbar class="md-hue-2">  
+      <div class="md-toolbar-tools">
+        <h2>Sign</h2>
+      </div>
+    </md-toolbar> -->
+   
+      <div layout="row" layout-fill  layout-align="center center">
+       <md-content  flex="30" flex-md="55" flex-sm="75" flex-xs="100" ng-controller="formController" >
+          <md-card class="md-whiteframe-6dp" id="login">
+            <form name="loginForm">
+               <md-toolbar class="md-hue-2">
+                <div class="md-toolbar-tools">
+                  <h2 class="md-display">Login</h2>
+
+                </div>
+              </md-toolbar>
+              <md-card-content  layout-margin>
+              <md-input-container class="md-block">
+              <label>User Name</label>
+              <input >
+              </md-input-container>
+              
+              <md-input-container class="md-block">
+              <label>Email ID</label>
+              <input  type="email">
+              </md-input-container>
+              
+              <div layout="row" layout-align="space-between center" layout-margin>
+              
+                <a href="#">
+                  <span class="md-subhead" ng-click="forget($event)">forgot password ?</span>
+                </a>
+              
+              
+                <md-button class="md-raised md-primary">
+                Submit
+                </md-button>
+             
+              </div>
+              </md-card-content>
+            </form>
+            
+          </md-card>
+        </md-content> 
+        
+      </div>
+    
+    
+    
+    
   </body>
 </html>
