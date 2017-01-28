@@ -1,4 +1,4 @@
-var app =angular.module('myApp',['ngMaterial'])
+var app =angular.module('myApp',['ngMaterial','ngMessages','ngAnimate','ngAria'])
 app.controller('formController',function($scope,$mdDialog){
 	$scope.forget=function(ev){
 		$mdDialog.show({
