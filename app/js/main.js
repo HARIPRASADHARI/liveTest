@@ -1,4 +1,7 @@
-var app =angular.module('myApp',['ngMaterial','ngMessages','ngAnimate','ngAria'])
+(function() {
+    'use strict';
+var app =angular.module('myApp',['ngMaterial','ngMessages','ngAnimate','ngAria','ui.router']).config(stateConfig)
+.config(defaultRouteConfig);
 app.controller('formController',function($scope,$mdDialog){
 	$scope.forget=function(ev){
 		$mdDialog.show({
@@ -15,6 +18,27 @@ app.controller('formController',function($scope,$mdDialog){
     };
 
 }
+
+
 	
 
 });
+
+function defaultRouteConfig($urlRouterProvider) {
+
+        $urlRouterProvider.otherwise('/');
+
+    } 
+    function stateConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+        
+        $urlRouterProvider.when('/', '/home');
+
+        $stateProvider
+            .state('home', {
+                url: "/home",
+                templateUrl: 'templates/home/home.html'
+            });
+
+
+    }
+})();
