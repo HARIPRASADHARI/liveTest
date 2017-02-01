@@ -1,4 +1,4 @@
-<div layout="row" layout-fill layout-align="center center">
+<div layout="row" layout-fill layout-align="center center" ng-cloak>
         <md-content flex="30" flex-md="55" flex-sm="75" flex-xs="100" ng-controller="formController">
             <md-card class="md-whiteframe-2dp" id="login">
                 <form name="loginForm" novalidate>
@@ -11,7 +11,7 @@
                     <md-card-content layout-margin>
                         <md-input-container class="md-block">
                             <label>Email ID</label>
-                            <md-icon class=" template" aria-label="login">email</md-icon>
+                            <md-icon class="template" aria-label="login">email</md-icon>
                             <input ng-minlength="5" type="email" ng-model="emailId" name="emailId" required/>
                             <div ng-messages="loginForm.emailId.$error" style="color:maroon" role="alert">
                                 <div ng-message="minlength">Your field is too short</div>
@@ -27,7 +27,7 @@
                             <a href="#">
                                 <span class="md-subhead" ng-click="forget($event)">forgot password ?</span>
                             </a>
-                            <md-button class="md-raised md-primary">
+                            <md-button ui-sref="second" class="md-raised md-primary">
                                 Submit
                             </md-button>
                         </div>
