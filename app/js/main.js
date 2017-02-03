@@ -28,6 +28,15 @@
 
 
 
+    }).controller('DashBoardCtrl', function ($scope,$timeout,$mdSidenav) {
+        $scope.toggleLeft=openMenu('left');
+
+        function openMenu(componentId){
+            console.log("Hai");
+            return function () {
+                $mdSidenav(componentId).toggle();
+            }
+        }
     });
 
     function defaultRouteConfig($urlRouterProvider) {
