@@ -13,10 +13,10 @@
         <md-content flex="">
             <md-toolbar class="md-hue-2">
                 <div class="md-toolbar-tools">
-                    <md-button hide-gt-sm class="md-icon-button" ng-click="openMenu()">
+                    <md-button hide-gt-sm class="md-icon-button" ng-click="openLeftMenu()">
                         <md-icon class="material-icons step" aria-label="menu">menu</md-icon>
                     </md-button>
-                    <h2>Hai</h2>
+                    <h2>Haiiii</h2>
                     <md-menu md-offset="0 35">
                         <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdMenu.open($event)">
                             <md-icon md-menu-origin="">keyboard_arrow_down</md-icon>
@@ -38,14 +38,26 @@
                                     </div>
                                 </md-button>
                             </md-menu-item>
-
                         </md-menu-content>
                     </md-menu>
                 </div>
             </md-toolbar>
             <md-content layout="row">
-              
-              
+                <md-card>
+                    <h1>Hai</h1>
+                    <md-input-container class="md-block">
+                        <label>City</label>
+                        <md-icon class="template" aria-label="login">email</md-icon>
+                        <input ng-minlength="5" type="text" ng-model="city" name="city" required/>
+                        <div ng-messages="loginForm.city.$error" style="color:maroon" role="alert">
+                            <div ng-message="minlength">Your field is too short</div>
+                            <div ng-message="maxlength">Your field is too long</div>
+                        </div>
+                    </md-input-container>
+                    <md-button ng-click="checkTemp(city)" class="md-raised md-primary">
+                        Submit
+                    </md-button>
+                </md-card>
             </md-content>
         </md-content>
     </section>

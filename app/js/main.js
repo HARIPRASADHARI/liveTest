@@ -1,13 +1,10 @@
 
 (function() {
     'use strict';
-    var app = angular.module('myApp', ['ngMaterial', 'ngMessages', 'ngAnimate', 'ngAria', 'ui.router'])
+    var app = angular.module('myApp', ['ngMaterial', 'ngMessages', 'ngAnimate', 'ngAria', 'ui.router','ngResource'])
         .config(stateConfig)
         .config(defaultRouteConfig);
-//     .config(['$locationProvider', function($locationProvider) {
-// $locationProvider.html5Mode(true);
-// $locationProvider.hashPrefix('!');
-// }]);
+
     app.controller('formController', function($scope, $mdDialog) {
         $scope.forget = function(ev) {
             $mdDialog.show({
@@ -29,11 +26,38 @@
 
 
 
-    }).controller('DashBoardCtrl', function ($scope,$timeout,$mdSidenav) {
+    }).controller('DashBoardCtrl', function ($scope,$timeout,$mdSidenav,Weather) {
         $scope.openLeftMenu = function() {
             $mdSidenav('left').toggle();
         };
-    });
+        $scope.checkTemp=function(c){
+        	var city={
+
+        		q:$scope.city,
+        		appid:'165fff8864045f0519b19ce59d5cfacb'
+
+        		
+        	};
+        	$scope.weather=Weather.getWeather(city);
+        	console.log('$scope.weather',$scope.weather);
+        }
+    }).factory('Weather', function($resource) {
+
+        var API_PATH = 'http://api.openweathermap.org/data/2.5/weather';
+        var par='165fff8864045f0519b19ce59d5cfacb';
+        var Weather = $resource(API_PATH);
+
+        return {
+            getWeather: function(weatherParams) {
+                return Weather.get(weatherParams,function(successResult) {
+                    return successResult;
+                    console.log(successResult);
+                }, function(errorResult) {
+                    console.log(errorResult);
+                });             
+            }
+        }
+    });;
 
     function defaultRouteConfig($urlRouterProvider) {
 
@@ -60,4 +84,3 @@
 
     }
 })();
-
