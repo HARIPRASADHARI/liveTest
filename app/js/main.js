@@ -1,4 +1,4 @@
-var app =angular.module('myApp',['ngMaterial','ngMessages','ngAnimate','ngAria'])
+var app =angular.module('myApp',['ngMaterial','ngMessages','ngAnimate','ngAria','ui.router'])
 app.controller('formController',function($scope,$mdDialog){
 	$scope.forget=function(ev){
 		$mdDialog.show({
@@ -18,3 +18,6 @@ app.controller('formController',function($scope,$mdDialog){
 	
 
 });
+app.config(function($stateProvider,$urlRouterProvider){
+	$urlRouterProvider
+})
