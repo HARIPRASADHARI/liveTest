@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- <base href="/"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Angular | HTML-5</title>
     <!--build:css css/styles.min.css-->
@@ -12,6 +13,7 @@
     <!--endbuild-->
     <!--build:js js/main.min.js -->
     <script type="text/javascript" src="js/lib/angular.js"></script>
+    <script type="text/javascript" src="js/lib/angular-ui-router.js"></script>
     <script type="text/javascript" src="js/lib/angular-animate.js"></script>
     <script type="text/javascript" src="js/lib/angular-messages.js"></script>
     <script type="text/javascript" src="js/lib/angular-aria.js"></script>
@@ -24,44 +26,9 @@
 </head>
 
 <body ng-app="myApp" ng-cloak>
-    <div layout="row" layout-fill layout-align="center center">
-        <md-content flex="30" flex-md="55" flex-sm="75" flex-xs="100" ng-controller="formController">
-            <md-card class="md-whiteframe-6dp" id="login">
-                <form name="loginForm" novalidate>
-                    <md-toolbar class="md-hue-2">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-display">Login</h2>
-                            <span flex></span>
-                        </div>
-                    </md-toolbar>
-                    <md-card-content layout-margin>
-                        <md-input-container class="md-block">
-                            <label>Email ID</label>
-                            <md-icon class=" template" aria-label="login">email</md-icon>
-                            <input ng-minlength="5" type="email" ng-model="emailId" name="emailId" required/>
-                            <div ng-messages="loginForm.emailId.$error" style="color:maroon" role="alert">
-                                <div ng-message="minlength">Your field is too short</div>
-                                <div ng-message="maxlength">Your field is too long</div>
-                            </div>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label>Password</label>
-                            <md-icon class=" template" aria-label="user name">lock_outline</md-icon>
-                            <input type="password" required>
-                        </md-input-container>
-                        <div layout="row" layout-align="space-between center" layout-margin>
-                            <a href="#">
-                                <span class="md-subhead" ng-click="forget($event)">forgot password ?</span>
-                            </a>
-                            <md-button ng-disabled="loginForm.$invalid" class="md-raised md-primary">
-                                Submit
-                            </md-button>
-                        </div>
-                    </md-card-content>
-                </form>
-            </md-card>
-        </md-content>
-    </div>
+
+    <ui-view></ui-view>
+
 </body>
 
 </html>

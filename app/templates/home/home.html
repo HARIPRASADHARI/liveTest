@@ -1,0 +1,38 @@
+<div layout="row" layout-fill layout-align="center center" ng-cloak>
+        <md-content flex="30" flex-md="55" flex-sm="75" flex-xs="100" ng-controller="formController">
+            <md-card class="md-whiteframe-2dp" id="login">
+                <form name="loginForm" novalidate>
+                    <md-toolbar class="md-hue-2">
+                        <div class="md-toolbar-tools">
+                            <h2 class="md-display">Logi</h2>
+                            <span flex></span>
+                        </div>
+                    </md-toolbar>
+                    <md-card-content layout-margin>
+                        <md-input-container class="md-block">
+                            <label>Email ID</label>
+                            <md-icon class="template" aria-label="login">email</md-icon>
+                            <input ng-minlength="5" type="email" ng-model="emailId" name="emailId" required/>
+                            <div ng-messages="loginForm.emailId.$error" style="color:maroon" role="alert">
+                                <div ng-message="minlength">Your field is too short</div>
+                                <div ng-message="maxlength">Your field is too long</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Password</label>
+                            <md-icon class=" template" aria-label="user name">lock_outline</md-icon>
+                            <input type="password" required>
+                        </md-input-container>
+                        <div layout="row" layout-align="space-between center" layout-margin>
+                            <a href="#">
+                                <span class="md-subhead" ng-click="forget($event)">forgot password ?</span>
+                            </a>
+                            <md-button ui-sref="second" class="md-raised md-primary">
+                                Submit
+                            </md-button>
+                        </div>
+                    </md-card-content>
+                </form>
+            </md-card>
+        </md-content>
+    </div>

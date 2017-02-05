@@ -1,0 +1,52 @@
+<div layout="column" layout-fill ng-cloak ng-controller="DashBoardCtrl">
+    <section layout="row" flex="">
+        <md-sidenav class="md-sidenav-left " md-component-id="left" md-is-locked-open="$mdMedia('lg')" md-whiteframe="4">
+            <md-toolbar class="md-hue-2">
+                <h1 class="md-toolbar-tools">Sidenav Left</h1>
+            </md-toolbar>
+            <md-content layout-padding="">
+                <md-button ng-click="close()" class="md-primary">
+                    Close Sidenav Left
+                </md-button>
+            </md-content>
+        </md-sidenav>
+        <md-content flex="">
+            <md-toolbar class="md-hue-2">
+                <div class="md-toolbar-tools">
+                    <md-button hide-gt-sm class="md-icon-button" ng-click="openMenu()">
+                        <md-icon class="material-icons step" aria-label="menu">menu</md-icon>
+                    </md-button>
+                    <h2>Hai</h2>
+                    <md-menu md-offset="0 35">
+                        <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdMenu.open($event)">
+                            <md-icon md-menu-origin="">keyboard_arrow_down</md-icon>
+                        </md-button>
+                        <md-menu-content width="3">
+                            <md-menu-item>
+                                <md-button>
+                                    <div layout="row" flex>
+                                        <p flex>Profile</p>
+                                        <md-icon class="step img" md-menu-align-target aria-label="description" style="margin: auto 3px auto 0;">person_outline</md-icon>
+                                    </div>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button>
+                                    <div layout="row" flex>
+                                        <p flex>Logout</p>
+                                        <md-icon class="step img" md-menu-align-target aria-label="description" style="margin: auto 3px auto 0;">lock_open</md-icon>
+                                    </div>
+                                </md-button>
+                            </md-menu-item>
+
+                        </md-menu-content>
+                    </md-menu>
+                </div>
+            </md-toolbar>
+            <md-content layout="row">
+              
+              
+            </md-content>
+        </md-content>
+    </section>
+</div>
