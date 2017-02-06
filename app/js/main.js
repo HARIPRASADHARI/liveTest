@@ -41,10 +41,11 @@
         	$scope.weather=Weather.getWeather(city);
         	console.log('$scope.weather',$scope.weather);
         }
+    }).filter('foramtIn',function (argument) {
+        
     }).factory('Weather', function($resource) {
 
         var API_PATH = 'http://api.openweathermap.org/data/2.5/weather';
-        var par='165fff8864045f0519b19ce59d5cfacb';
         var Weather = $resource(API_PATH);
 
         return {
