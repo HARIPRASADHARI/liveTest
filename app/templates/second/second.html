@@ -2,7 +2,7 @@
     <section layout="row" flex="">
         <md-sidenav class="md-sidenav-left " md-component-id="left" md-is-locked-open="$mdMedia('lg')" md-whiteframe="4">
             <md-toolbar class="md-hue-2">
-                <h1 class="md-toolbar-tools">Sidenav Left</h1>
+                <h1 class="md-toolbar-tools animated  bounce">Sidenav Left</h1>
             </md-toolbar>
             <md-content layout-padding="">
                 <md-button ng-click="close()" class="md-primary">
@@ -43,53 +43,61 @@
             </md-toolbar>
             <md-content layout="column">
                 <form name="searchWeather">
-                <md-card layout="row">
-                    <md-list flex>
-                        <md-list-item>
-                            <md-input-container flex>
-                                <label>City</label>
-                                <md-icon class="template" aria-label="login">location_searching</md-icon>
-                                <input flex ng-minlength="2" type="text" ng-model="city" name="city" required/>
-                                <div ng-messages="loginForm.city.$error" style="color:maroon" role="alert">
-                                    <div ng-message="minlength">Your field is too short</div>
-                                    <div ng-message="maxlength">Your field is too long</div>
-                                </div>
-                            </md-input-container>
-                            <md-button ng-disabled="searchWeather.$invalid" flex="10" ng-click="checkTemp(city)" class="md-raised md-primary">
-                                <md-icon aria-label="description">search</md-icon>
-                            </md-button>
-                        </md-list-item>
-                    </md-list>
-                </md-card>
+                    <md-card layout="row">
+                        <md-list flex>
+                            <md-list-item>
+                                <md-input-container flex>
+                                    <label>City</label>
+                                    <md-icon class="template" aria-label="login">location_searching</md-icon>
+                                    <input flex ng-minlength="2" type="text" ng-model="city" name="city" required/>
+                                    <div ng-messages="loginForm.city.$error" style="color:maroon" role="alert">
+                                        <div ng-message="minlength">Your field is too short</div>
+                                        <div ng-message="maxlength">Your field is too long</div>
+                                    </div>
+                                </md-input-container>
+                                <md-button ng-disabled="searchWeather.$invalid" flex="10" ng-click="checkTemp(city)" class="md-raised md-primary">
+                                    <md-icon aria-label="description">search</md-icon>
+                                </md-button>
+                            </md-list-item>
+                        </md-list>
+                    </md-card>
                 </form>
                 <md-card ng-if="weather" ng-class="{} ">
                     <md-card-header>
                         <md-card-header-text>
-                            <span class="md-title" ng-animate="'animate'">{{weather.name}}</span>
+                            <span class="md-title animated  bounce" ng-animate="'animate'">{{weather.name}}</span>
                         </md-card-header-text>
                     </md-card-header>
                     <md-card-content>
                         <md-list>
                             <md-list-item>
-                                <p>{{weather.main.temp}}</p>
+                                <p class="animated  bounce">{{weather.main.temp}}</p>
                             </md-list-item>
                             <md-list-item>
-                                <p>{{weather.main.humidity}}</p>
+                                <p class="animated  bounce">{{weather.main.humidity}}</p>
                             </md-list-item>
                             <md-list-item>
-                                <p>{{weather.main.temp_max}}</p>
+                                <p class="animated  bounce">{{weather.main.temp_max}}</p>
                             </md-list-item>
                             <md-list-item>
-                                <p>{{weather.main.temp_min}}</p>
+                                <p class="animated  bounce">{{weather.main.temp_min}}</p>
                             </md-list-item>
                             <md-list-item>
-                                <p>{{weather.sys.sunrise|locationTime}}</p>
+                                <p class="animated  bounce">{{weather.sys.sunrise|locationTime}}</p>
                             </md-list-item>
                             <md-list-item>
-                                <p>{{weather.sys.sunset| locationTime}}</p>
+                                <p class="animated  bounce">{{weather.sys.sunset| locationTime}}</p>
                             </md-list-item>
                         </md-list>
                     </md-card-content>
+                </md-card>
+                <md-card>
+                
+                <button ng-click="fadeAnimation =           !fadeAnimation">Toggle fade</button> fadeAnimation value: {{fadeAnimation}}
+                <div class="firstSampleAnimation" ng-show="fadeAnimation"> This element appears when the fadeAnimation model is true </div>
+                <div class="sample2" ng-repeat="item in [1, 2, 3]">
+                    <p>Hai{{item}}</p>
+                </div>
                 </md-card>
             </md-content>
         </md-content>

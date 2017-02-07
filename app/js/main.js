@@ -56,6 +56,7 @@
             $scope.weather = Weather.getWeather(city);
             console.log('$scope.weather', $scope.weather);
         }
+        $scope.fadeAnimation = false;
     }).factory('Weather', function($resource) {
         var API_PATH = 'http://api.openweathermap.org/data/2.5/weather';
         var Weather = $resource(API_PATH);
