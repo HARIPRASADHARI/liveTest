@@ -1,20 +1,73 @@
 /*custom.scss*/
-$background-color:#123;
-body{
-	background-color: transparent;
+$background-color: #123;
+
+body {
+    background-color: transparent;
 }
-#login{
-	a,span{
-		text-decoration: none;
-		outline: 0;
-		&:hover{
-			cursor: pointer;
-		}
-		&:focus{
-			outline:0 !important;
-		}
-		&:active{
-			outline:0 !important;
-		}
-	}
+
+#login {
+    a, span {
+        text-decoration: none;
+        outline: 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:focus {
+            outline: 0 !important;
+        }
+
+        &:active {
+            outline: 0 !important;
+        }
+    }
+}
+
+.search-widget {
+    input[type="text"] {
+        outline: 0;
+        padding: 0px 6px;
+        height: 40px;
+        border-radius: 2px;
+        border: 1px solid transparent;
+        -moz-transition: all 0.5s cubic-bezier(0.4, 0.1, 0.1, 1);
+        -webkit-transition: all 0.5s cubic-bezier(0.4, 0.1, 0.1, 1);
+        -o-transition: all 0.5s cubic-bezier(0.4, 0.1, 0.1, 1);
+        transition: all 0.5s cubic-bezier(0.4, 0.1, 0.1, 1);
+
+        &:focus {}
+    }
+}
+
+.temp-details {
+    sup {
+        
+            font-size: 1.6em;
+            position: relative;
+            padding: 0em 5px;
+
+            &.wi-celsius {
+                // &:after {
+                //     content: '';
+                //     display: inline-block;
+                //     background: #000;
+                //     height: 25px;
+                //     width: 1px;
+                //     top: 22%;
+                //     position: absolute;
+                // }
+            }
+      
+    }
+}
+
+firstSampleAnimation.ng-hide-add, .firstSampleAnimation.ng-hide-remove {
+    -webkit-transition: 1s ease-in-out opacity;
+    transition: 1s ease-in-out opacity;
+    opacity: 1;
+}
+
+.firstSampleAnimation.ng-hide {
+    opacity: 0;
 }
