@@ -1,8 +1,7 @@
 (function() {
     'use strict';
-    var app = angular.module('myApp', ['ngMaterial', 'ngMessages', 'ngAnimate', 'ngAria', 'ui.router', 'ngResource'])
-        .config(stateConfig)
-        .config(defaultRouteConfig)
+    var app = angular.module('myApp', ['ngMaterial', 'ngMessages', 'ngAnimate', 'ngAria'])
+        
         .filter('locationTime', function() {
           return  function convertTimestamp(timestamp) {
                 var d = new Date(timestamp * 1000), // Convert the passed timestamp to milliseconds
@@ -32,7 +31,7 @@
         $scope.forget = function(ev) {
             $mdDialog.show({
                 controller: DialogController,
-                templateUrl: '/templates/forget.html',
+                templateUrl: './templates/forget.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose: true
@@ -44,48 +43,11 @@
                 $mdDialog.cancel();
             };
         }
-    }).controller('DashBoardCtrl', function($scope, $timeout, $mdSidenav, Weather) {
+    }).controller('DashBoardCtrl', function($scope, $timeout, $mdSidenav) {
         $scope.openLeftMenu = function() {
             $mdSidenav('left').toggle();
         };
-        $scope.checkTemp = function(c) {
-            var city = {
-                q: $scope.city,
-                appid: '165fff8864045f0519b19ce59d5cfacb'
-            };
-            $scope.weather = Weather.getWeather(city);
-            console.log('$scope.weather', $scope.weather);
-        }
+        
         $scope.fadeAnimation = false;
-    }).factory('Weather', function($resource) {
-        var API_PATH = 'http://api.openweathermap.org/data/2.5/weather';
-        var Weather = $resource(API_PATH);
-        return {
-            getWeather: function(weatherParams) {
-                return Weather.get(weatherParams, function(successResult) {
-                    return successResult;
-                    console.log(successResult);
-                }, function(errorResult) {
-                    console.log(errorResult);
-                });
-            }
-        }
     });
-
-    function defaultRouteConfig($urlRouterProvider) {
-        $urlRouterProvider.otherwise('/');
-    }
-
-    function stateConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.when('/', '/home');
-        $stateProvider
-            .state('home', {
-                url: "/home",
-                templateUrl: 'templates/home/home.html'
-            });
-        $stateProvider.state('second', {
-            url: "/second",
-            templateUrl: 'templates/second/second.html'
-        })
-    }
 })();
